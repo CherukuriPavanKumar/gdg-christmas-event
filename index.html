@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Santa's Search Trends</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Google+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎅</text></svg>">
+</head>
+<body>
+    <div class="snow-container"></div>
+    
+    <main id="app">
+        <!-- Welcome Screen -->
+        <section id="welcome-screen" class="screen active">
+            <div class="hero-image">
+                <div class="santa-face">
+                    <div class="hat">
+                        <div class="pom-pom"></div>
+                    </div>
+                    <div class="face">
+                        <div class="eyes">
+                            <div class="eye left"></div>
+                            <div class="eye right"></div>
+                        </div>
+                        <div class="beard"></div>
+                        <div class="nose"></div>
+                    </div>
+                </div>
+            </div>
+            <h1>Santa's Search Trends</h1>
+            <p>Guess what the world is searching for!</p>
+            <button id="start-btn" class="btn primary-btn">Start Game 🎄</button>
+            
+            <div class="intro-leaderboard">
+                <h3>Top Helpers</h3>
+                <ul id="intro-leaderboard-list"></ul>
+            </div>
+        </section>
+
+        <!-- Game Screen -->
+        <section id="game-screen" class="screen hidden">
+            <header class="game-header">
+                <div class="timer-display" id="timer-display">
+                    <span class="timer-icon">⏱️</span>
+                    <span id="timer-text">10</span>
+                </div>
+                <div class="progress-bar-container">
+                    <div id="progress-bar" class="progress-bar"></div>
+                </div>
+                <div class="score-pill">
+                    <span class="score-icon">🎅</span>
+                    <span id="score-display">0</span>
+                </div>
+            </header>
+
+            <div class="question-container">
+                <div class="genre-tag" id="genre-tag">Category</div>
+                <div class="options-grid">
+                    <button id="option-1" class="option-card" data-option="1">
+                        <span class="option-text">Option 1</span>
+                        <div class="feedback-icon hidden"></div>
+                    </button>
+                    <div class="vs-badge">VS</div>
+                    <button id="option-2" class="option-card" data-option="2">
+                        <span class="option-text">Option 2</span>
+                        <div class="feedback-icon hidden"></div>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- End Screen -->
+        <section id="end-screen" class="screen hidden">
+            <div class="result-card">
+                <h2>Game Over!</h2>
+                <div class="final-score-container">
+                    <span class="final-score-label">Your Score</span>
+                    <span id="final-score" class="final-score">0</span>
+                </div>
+                
+                <div class="input-group">
+                    <input type="text" id="player-name" placeholder="Enter your name" maxlength="12">
+                    <button id="save-score-btn" class="btn secondary-btn">Save Score</button>
+                </div>
+
+                <div class="leaderboard-section">
+                    <h3>Leaderboard</h3>
+                    <ul id="leaderboard-list"></ul>
+                </div>
+
+                <button id="restart-btn" class="btn primary-btn">Play Again 🎁</button>
+            </div>
+        </section>
+    </main>
+
+    <script src="js/questions.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
